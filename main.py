@@ -1,6 +1,8 @@
 from flask import Flask, request, send_file
 import io
 
+import pandas as pd
+
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
@@ -12,6 +14,9 @@ def upload_file():
         file_stream = io.BytesIO()
         file.save(file_stream)
         file_stream.seek(0)
+
+        # df = pd.read_excel(file_stream)
+        # print(df)
 
         file_name = file.filename
 
