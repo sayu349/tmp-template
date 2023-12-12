@@ -15,8 +15,6 @@ def upload_file():
 
         file_name = file.filename
 
-        
-
         # メモリ内のファイルストリームを送信
         return send_file(
                         file_stream,
